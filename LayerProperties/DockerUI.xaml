@@ -13,15 +13,15 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Left">
             <TextBox x:Name="tbSearch" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" Width="226" MinWidth="226" MaxWidth="226" TextChanged="tbSearch_TextChanged"/>
-            <CheckBox x:Name="cbReverse" Content="Reverse selection" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="cbReverse" Content="Reverse selection" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Checked="cbReverse_Checked"/>
             <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Click="btnRefresh_Click" Width="226" MinWidth="226" MaxWidth="226" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
-            <ListBox x:Name="lbLayernames" HorizontalAlignment="Left" Height="300" Margin="0,5,0,0" VerticalAlignment="Top" Width="226" MinWidth="226" MaxWidth="226"/>
+            <ListBox x:Name="lbLayernames" HorizontalAlignment="Left" Height="300" Margin="0,5,0,0" VerticalAlignment="Top" Width="226" MinWidth="226" MaxWidth="226" SelectionChanged="lbLayernames_SelectionChanged"/>
             <Button x:Name="btnVisibilityOn" Content="Visibility on" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="110" Click="VisibilityOn" MinWidth="110" MaxWidth="110"/>
             <Button x:Name="btnVisibilityOff" Content="Visibility off" HorizontalAlignment="Left" Margin="115,-20,0,0" VerticalAlignment="Top" Width="110" Click="VisibilityOff" MinWidth="110" MaxWidth="110"/>
             <Button x:Name="btnPrintingOn" Content="Printing on" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="110" Click="PrintingOn" MinWidth="110" MaxWidth="110"/>
             <Button x:Name="btnPrintingOff" Content="Printing off" HorizontalAlignment="Left" Margin="115,-20,0,0" VerticalAlignment="Top" Width="110" Click="PrintingOff" MinWidth="110" MaxWidth="110"/>
-            <Button x:Name="btnEditingOn" Content="Editing on" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="110" Click="EditingOn" MinWidth="110" MaxWidth="110"/>
-            <Button x:Name="btnEditingOff" Content="Editing off" HorizontalAlignment="Left" Margin="115,-20,0,0" VerticalAlignment="Top" Width="110" Click="EditingOff" MinWidth="110" MaxWidth="110"/>
+            <Button x:Name="btnEditingOn" Content="Editing on" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="110" Click="btnEditingOn_Click" MinWidth="110" MaxWidth="110"/>
+            <Button x:Name="btnEditingOff" Content="Editing off" HorizontalAlignment="Left" Margin="115,-20,0,0" VerticalAlignment="Top" Width="110" Click="btnEditingOff_Click" MinWidth="110" MaxWidth="110"/>
             <Button x:Name="btnAllOn" Content="All on" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="110" Click="AllOn" MinWidth="110" MaxWidth="110"/>
             <Button x:Name="btnAllOff" Content="All off" HorizontalAlignment="Left" Margin="115,-20,0,0" VerticalAlignment="Top" Width="110" Click="AllOff" MinWidth="110" MaxWidth="110"/>
             <Button x:Name="btnActiveLayer" Content="Active layer" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Click="GetActiveLayerName" Width="226" MinWidth="226" MaxWidth="226" HorizontalContentAlignment="Center"/>

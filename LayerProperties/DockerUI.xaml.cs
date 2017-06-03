@@ -28,11 +28,167 @@ namespace LayerProperties
         {
             this.cdrApplication = application;
             InitializeComponent();
+        }
 
-            foreach (Layer l in this.cdrApplication.ActivePage.Layers )
+        // Functionality for the Refresh button
+        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            try
             {
-                lbLayernames.Items.Add(l.Name);
+                lbLayernames.Items.Clear();
+                foreach (Layer l in cdrApplication.ActivePage.Layers)
+                {
+                    lbLayernames.Items.Add(l.Name);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unhandled exception: " + ex.Message);
+            }
+        }
+
+        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void cbReverse_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lbLayernames_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void VisibilityOn(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (Layer l in lbLayernames.Items)
+                {
+                    l.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unhandled exception: " + ex.Message);
+            }
+        }
+
+        private void VisibilityOff(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (Layer l in lbLayernames.Items)
+                {
+                    l.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unhandled exception: " + ex.Message);
+            }
+        }
+
+        private void PrintingOn(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (Layer l in lbLayernames.Items)
+                {
+                    l.Printable = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unhandled exception: " + ex.Message);
+            }
+        }
+
+        private void PrintingOff(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (Layer l in lbLayernames.Items)
+                {
+                    l.Printable = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unhandled exception: " + ex.Message);
+            }
+        }
+
+        private void btnEditingOn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (Layer l in lbLayernames.Items)
+                {
+                    l.Editable = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unhandled exception: " + ex.Message);
+            }
+        }
+
+        private void btnEditingOff_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (Layer l in lbLayernames.Items)
+                {
+                    l.Editable = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unhandled exception: " + ex.Message);
+            }
+        }
+
+        private void AllOn(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (Layer l in cdrApplication.ActivePage.Layers)
+                {
+                    l.Editable = true;
+                    l.Printable = true;
+                    l.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unhandled exception: " + ex.Message);
+            }
+        }
+
+        private void AllOff(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (Layer l in cdrApplication.ActivePage.Layers)
+                {
+                    l.Editable = false;
+                    l.Printable = false;
+                    l.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unhandled exception: " + ex.Message);
+            }
+        }
+
+        private void GetActiveLayerName(object sender, RoutedEventArgs e)
+        {
+
         }
 
     }
